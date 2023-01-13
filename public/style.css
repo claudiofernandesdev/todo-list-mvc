@@ -1,3 +1,240 @@
-h1 {
-    color: #78057e;
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+:root {
+    --bgcolor: #202024;
+    --bgcolor-dark: #161616;
+    --bgcolor-dark2: #272727;
+    --bgcolor-light: #5a5a5a;
+    --bgcolor-black: #00000080;
+    --secondary-bgcolor: #595970;
+    --secondary-bgcolor-light: #ccc;
+    --hover-color: #016817;
+    --text-color: #fcfcfc;
+    --secondary-text-color: #969494;
+    --edit-color: #c0a300;
+    --delete-color: #ac0202;
+
+    --transition: all .4s ease-in-out;
+}
+
+body {
+    background: var(--bgcolor);
+    width: 100%;
+    height: 100%;
+    color: var(--text-color);
+}
+
+header {
+    background: var(--secondary-bgcolor);
+    padding: 3rem;
+    margin: .5rem;
+    text-align: center;
+}
+
+header h1 {
+    padding-bottom: 3rem;
+    color: var(--edit-color);
+}
+
+input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 70%;
+    font-size: 1.2rem;
+    padding: .6rem;
+    outline: none;
+    background: var(--bgcolor);
+    color: var(--text-color);
+}
+
+button {
+    padding: .6rem;
+    width: 25%;
+    background: var(--bgcolor);
+    color: var(--secondary-text-color);
+    text-align: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    transition: var(--transition);
+}
+
+button:hover {
+    background: var(--edit-color);
+    color: var(--text-color);
+}
+
+section#tasks {
+    margin: .5rem;
+
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    position: relative;
+    padding: .5rem;
+    background: var(--bgcolor-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 1.2rem;
+}
+
+ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+ul li span {
+    color: var(--secondary-bgcolor-light);
+    font-style: italic;
+    font-size: .8rem;
+    padding-left: 1rem;
+}
+
+ul li div {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+li .editTask,
+li .deleteTask {
+    color: var(--secondary-bgcolor-light);
+    padding: .25rem;
+    transition: var(--transition);
+}
+
+li .deleteTask {
+    margin-left: .25rem;
+}
+
+li .editTask:hover  {
+    background: var(--edit-color);
+}
+
+li .deleteTask:hover {
+    background: var(--delete-color);
+}
+
+ul li:nth-child(odd) {
+    background: var(--bgcolor-dark2);
+}
+
+ul li:hover {
+    background: var(--bgcolor-light);
+}
+
+section#modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bgcolor-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+}
+
+div#card {
+    width: 30rem;
+    position: relative;
+    background: var(--bgcolor);
+}
+
+div#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+div#card h2 {
+    margin: 0;
+    color: var(--edit-color);
+}
+
+div#card #closeModal {
+    top: .75rem;
+    right: 0;
+    color: var(--secondary-bgcolor-light);
+    font-weight: 700;
+    font-size: 1.25rem;
+    padding: .25rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+div#card #closeModal:hover {
+    background: var(--delete-color);
+    border-radius: 20%;
+}
+
+div#card hr {
+    width: 90%;
+    margin: 0 auto;
+    border-color: var(--bgcolor-black);
+}
+
+div#card p {
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1rem;
+}
+
+div#btnsCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+div#btnsCard a {
+    text-decoration: none;
+    padding: .5rem;
+    width: 7rem;
+    text-align: center;
+    background: var(--bgcolor-dark);
+    outline: none;
+    font-size: 1.25rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+div#btnsCard #btnNot {
+    color: var(--delete-color);
+    border: 1px solid var(--delete-color);
+    margin-right: 1rem;
+}
+
+div#btnsCard #btnNot:hover {
+    background: var(--delete-color);
+    color: var(--text-color);
+}
+
+div#btnsCard #btnYes {
+    color: var(--hover-color);
+    border: 1px solid var(--hover-color);
+    margin-right: 1rem;
+}
+div#btnsCard #btnYes:hover {
+    background: var(--hover-color);
+    color: var(--text-color);
 }
