@@ -9,6 +9,12 @@
 		<title>To Do List</title>
 	</head>
 	<body>
+		<% if ( message != "") { %> 
+		<section class="message message-<%= type %>">
+			<p><%= message %></p>
+			<span id="close-message"><i class="bi bi-x-lg"></i></span>
+		</section>
+		<% } %> 
 		<header>
 			<% if(task == null) { %>
 
@@ -38,15 +44,15 @@
 			<ul>
 				<% tasksList.forEach((task) => { %>
 
-				<li>
+				<li class="check-<%= task.check %>">
 					<div>
-						<a href="/"><%= task.task %></a>
+						<a href="/check/<%= task._id %>" class="check-<%= task.check %>"><%= task.task %></a>
 						<span>Criado em <%= task.date.toLocaleDateString('pt-BR') %></span>
 					</div>
 					
 					<div>
-						<a href="/getById/<%= task._id %>/update" class="editTask"><i class="bi bi-pencil-square"></i></a>
-						<a href="/getById/<%= task._id %>/delete" class="deleteTask"><i class="bi bi-trash-fill"></i></a>
+						<a class="editTask" href="/getById/<%= task._id %>/update" ><i class="bi bi-pencil-square"></i></a>
+						<a class="deleteTask" href="/getById/<%= task._id %>/delete"><i class="bi bi-trash-fill"></i></a>
 					</div>					
 				</li>
 

@@ -15,11 +15,15 @@
     --bgcolor-black: #00000080;
     --secondary-bgcolor: #595970;
     --secondary-bgcolor-light: #ccc;
+    --gray-color: #888;
     --hover-color: #016817;
     --text-color: #fcfcfc;
     --secondary-text-color: #969494;
     --edit-color: #c0a300;
     --delete-color: #ac0202;
+    --danger-color: #f37d7d;
+    --success-color: #aff1bd;
+    --danger-dark-color: #6b0000;
 
     --transition: all .4s ease-in-out;
 }
@@ -87,6 +91,7 @@ ul li {
     position: relative;
     padding: .5rem;
     background: var(--bgcolor-dark);
+    text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -97,6 +102,7 @@ ul li {
 ul li a {
     text-decoration: none;
     color: var(--text-color);
+    padding-left: 2rem;
 }
 
 ul li span {
@@ -112,22 +118,22 @@ ul li div {
     flex-wrap: wrap;
 }
 
-li .editTask,
-li .deleteTask {
+a.editTask,
+a.deleteTask {
     color: var(--secondary-bgcolor-light);
     padding: .25rem;
     transition: var(--transition);
 }
 
-li .deleteTask {
+a.deleteTask {
     margin-left: .25rem;
 }
 
-li .editTask:hover  {
+a.editTask:hover  {
     background: var(--edit-color);
 }
 
-li .deleteTask:hover {
+a.deleteTask:hover {
     background: var(--delete-color);
 }
 
@@ -237,4 +243,70 @@ div#btnsCard #btnYes {
 div#btnsCard #btnYes:hover {
     background: var(--hover-color);
     color: var(--text-color);
+}
+
+.message {
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.message-danger {
+    background: var(--danger-color);
+    color: var(--delete-color);
+}
+
+.message-success {
+    background: var(--success-color);
+    color: var(--hover-color);
+}
+
+span#close-message {
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    padding-left: 2rem;
+}
+
+span#close-message:hover {
+    font-size: 1.75rem;
+    font-weight: 900;
+}
+
+ul li.check-true {
+    background: var(--gray-color);
+    color: var(--text-color);
+    text-decoration: line-through;
+}
+
+ul li a.check-true::before {
+    content: "";
+    position: absolute;
+    border: solid var(--hover-color);
+    top: 12px;
+    left: 16px;
+    height: 15px; 
+    width: 7px;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+ul li a.check-false::before {
+    content: "";
+    position: absolute;
+    border: solid #fff;
+    top: 15px;
+    left: 16px;
+    height: 13px; 
+    width: 13px;
+    border-width: 2px;
 }
