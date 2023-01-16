@@ -13,16 +13,17 @@
     --bgcolor-dark2: #272727;
     --bgcolor-light: #5a5a5a;
     --bgcolor-black: #00000080;
-    --secondary-bgcolor: #595970;
+    --secondary-bgcolor: #00798c;
     --secondary-bgcolor-light: #ccc;
-    --gray-color: #888;
-    --text-color: #fcfcfc;
+    --marine-color: #00c2e0;
+    --text-color: #f4f4f5;
     --secondary-text-color: #969494;
-    --warning-color: #c0a300;
+    --warning-color: #eba433;
+    --greenryb-color: #61ab36;
     --danger-color: #ac0202;
-    --danger-light-color: #f37d7d;
+    --danger-light-color: #da6c7b;
     --success-color: #016817;
-    --success-light-color: #aff1bd;
+    --success-light-color: #96d373;
 
     --transition: all .4s ease-in-out;
 }
@@ -43,7 +44,7 @@ header {
 
 header h1 {
     padding-bottom: 3rem;
-    color: var(--warning-color);
+    color: var(--greenryb-color);
 }
 
 input {
@@ -73,7 +74,7 @@ button {
 }
 
 button:hover {
-    background: var(--warning-color);
+    background: var(--greenryb-color);
     color: var(--text-color);
 }
 
@@ -172,7 +173,7 @@ div#header {
 
 div#card h2 {
     margin: 0;
-    color: var(--warning-color);
+    color: var(--greenryb-color);
 }
 
 div#card #closeModal {
@@ -282,7 +283,7 @@ span#close-message:hover {
 }
 
 ul li.check-true {
-    background: var(--gray-color);
+    background: var(--marine-color);
     color: var(--text-color);
     text-decoration: line-through;
 }
