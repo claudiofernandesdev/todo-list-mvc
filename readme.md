@@ -23,6 +23,10 @@ O projeto também faz uso da linguagem **EJS** para renderização da página no
 - Database
 	+ MongoDB
 	
+## Screenshots
+
+	
+![Todo_List_screenshot](https://user-images.githubusercontent.com/112025063/212751927-6b842fdc-692d-47f3-b025-a267d6d75f9d.png)
 
 
 
