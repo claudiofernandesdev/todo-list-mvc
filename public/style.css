@@ -16,14 +16,13 @@
     --secondary-bgcolor: #595970;
     --secondary-bgcolor-light: #ccc;
     --gray-color: #888;
-    --hover-color: #016817;
     --text-color: #fcfcfc;
     --secondary-text-color: #969494;
-    --edit-color: #c0a300;
-    --delete-color: #ac0202;
-    --danger-color: #f37d7d;
-    --success-color: #aff1bd;
-    --danger-dark-color: #6b0000;
+    --warning-color: #c0a300;
+    --danger-color: #ac0202;
+    --danger-light-color: #f37d7d;
+    --success-color: #016817;
+    --success-light-color: #aff1bd;
 
     --transition: all .4s ease-in-out;
 }
@@ -44,7 +43,7 @@ header {
 
 header h1 {
     padding-bottom: 3rem;
-    color: var(--edit-color);
+    color: var(--warning-color);
 }
 
 input {
@@ -74,7 +73,7 @@ button {
 }
 
 button:hover {
-    background: var(--edit-color);
+    background: var(--warning-color);
     color: var(--text-color);
 }
 
@@ -130,11 +129,11 @@ a.deleteTask {
 }
 
 a.editTask:hover  {
-    background: var(--edit-color);
+    background: var(--warning-color);
 }
 
 a.deleteTask:hover {
-    background: var(--delete-color);
+    background: var(--danger-color);
 }
 
 ul li:nth-child(odd) {
@@ -173,7 +172,7 @@ div#header {
 
 div#card h2 {
     margin: 0;
-    color: var(--edit-color);
+    color: var(--warning-color);
 }
 
 div#card #closeModal {
@@ -188,7 +187,7 @@ div#card #closeModal {
 }
 
 div#card #closeModal:hover {
-    background: var(--delete-color);
+    background: var(--danger-color);
     border-radius: 20%;
 }
 
@@ -225,23 +224,23 @@ div#btnsCard a {
 }
 
 div#btnsCard #btnNot {
-    color: var(--delete-color);
-    border: 1px solid var(--delete-color);
+    color: var(--danger-color);
+    border: 1px solid var(--danger-color);
     margin-right: 1rem;
 }
 
 div#btnsCard #btnNot:hover {
-    background: var(--delete-color);
+    background: var(--danger-color);
     color: var(--text-color);
 }
 
 div#btnsCard #btnYes {
-    color: var(--hover-color);
-    border: 1px solid var(--hover-color);
+    color: var(--success-color);
+    border: 1px solid var(--success-color);
     margin-right: 1rem;
 }
 div#btnsCard #btnYes:hover {
-    background: var(--hover-color);
+    background: var(--success-color);
     color: var(--text-color);
 }
 
@@ -261,24 +260,24 @@ div#btnsCard #btnYes:hover {
 }
 
 .message-danger {
-    background: var(--danger-color);
-    color: var(--delete-color);
+    background: var(--danger-light-color);
+    color: var(--danger-color);
 }
 
 .message-success {
-    background: var(--success-color);
-    color: var(--hover-color);
+    background: var(--success-light-color);
+    color: var(--success-color);
 }
 
 span#close-message {
     font-size: 1.5rem;
+    font-weight: 500;
     cursor: pointer;
     transition: var(--transition);
     padding-left: 2rem;
 }
 
 span#close-message:hover {
-    font-size: 1.75rem;
     font-weight: 900;
 }
 
@@ -291,7 +290,7 @@ ul li.check-true {
 ul li a.check-true::before {
     content: "";
     position: absolute;
-    border: solid var(--hover-color);
+    border: solid var(--success-color);
     top: 12px;
     left: 16px;
     height: 15px; 
